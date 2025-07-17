@@ -66,10 +66,10 @@ jobs:
           repository: pytorch/torchtune
           path: torchtune
 
-      - name: Install torchtune
-        working-directory: torchtune
-        run: |
-          pip install -e .
+      # - name: Install torchtune
+      #   working-directory: torchtune
+      #   run: |
+      #     pip install -e .
 
       - name: Download torch artifact
         if: ${{ inputs.torch-artifact }}
@@ -103,7 +103,7 @@ jobs:
       - name: Install torch_npu
         working-directory: ascend_npu
         run: |
-          pip install ${{ inputs.torch-npu-artifact }}
+          pip install ${{ inputs.torch-npu-artifact }} torchtune torchvision torchao
 
       - name: Show environment info
         run: |
