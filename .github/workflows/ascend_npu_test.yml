@@ -184,5 +184,3 @@ jobs:
       image: ${{ needs.prepare.outputs.image }}
       torch-artifact: ${{ needs.build-torch.outputs.torch-artifact }}
       torch-npu-artifact: ${{ needs.build.outputs.torch-npu-artifact }}
-    secrets:
-      pr-token: ${{ secrets.ASCEND_RUNNER_TOKEN }}
